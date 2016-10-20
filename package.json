@@ -1,0 +1,33 @@
+{
+  "name": "moofuck",
+  "version": "0.0.0",
+  "description": "moo",
+  "author": {
+    "name": "Markus Tran",
+    "email": "thebluepillow@gmail.com",
+    "url": "http://pillowfication.com"
+  },
+  "homepage": "https://github.com/pillowfication/moofuck",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pillowfication/moofuck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pillowfication/moofuck/issues"
+  },
+  "main": "index.js",
+  "bin": {
+    "moofuck": "index.js"
+  },
+  "preferGlobal": "true",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "pillow",
+    "moo",
+    "brainfuck"
+  ],
+  "license": "MIT"
+}
