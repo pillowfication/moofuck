@@ -39,4 +39,4 @@ Example
 
 ### Examples
 
-See `/examples` for sample Moofuck programs.
+See [/examples](examples/) for sample Moofuck programs.
