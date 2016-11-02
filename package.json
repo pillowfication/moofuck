@@ -17,12 +17,12 @@
   },
   "main": "index.js",
   "bin": {
-    "moofuck": "index.js"
+    "moofuck": "bin/moofuck.js"
   },
   "preferGlobal": "true",
-  "dependencies": {
-  },
   "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-pf": "^1.0.5"
   },
   "keywords": [
     "pillow",

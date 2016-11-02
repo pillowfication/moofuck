@@ -1,3 +1,4 @@
-#!/usr/bin/env node
-
-console.log('moo');
+module.exports = {
+  execute: require('./src/execute'),
+  transpile: require('./src/transpile')
+};
