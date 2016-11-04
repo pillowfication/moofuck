@@ -22,7 +22,7 @@ module.exports = {
   },
 
   moofuckToBrainfuck(moofuck) {
-    moofuck = moofuck.match(/moo\r?\n/g);
+    moofuck = moofuck.match(/^moo\r?\n/gm);
     if (!moofuck)
       return '';
 
