@@ -1,8 +1,8 @@
-const COMMANDS = '><+-.,[]';
+const COMMANDS = '><+-.,[]'.split('');
 const BTM = {};
 const MTB = {};
 
-Array.from(COMMANDS).forEach((command, index) => {
+COMMANDS.forEach((command, index) => {
   let moo = '';
   for (let i = 0; i < 3; ++i)
     moo += 'moo' + ((index >> i & 1) ? '\r\n' : '\n');
@@ -13,8 +13,8 @@ Array.from(COMMANDS).forEach((command, index) => {
 module.exports = {
   brainfuckToMoofuck(brainfuck) {
     let moofuck = '';
-    for (let command of brainfuck) {
-      let moo = BTM[command];
+    for (const command of brainfuck) {
+      const moo = BTM[command];
       if (moo)
         moofuck += moo;
     }
@@ -30,7 +30,7 @@ module.exports = {
     let codon = '';
     let pointer = 0;
 
-    for (let moo of moofuck) {
+    for (const moo of moofuck) {
       codon += moo;
       ++pointer;
       if (pointer === 3) {

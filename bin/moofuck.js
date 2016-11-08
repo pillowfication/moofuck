@@ -7,8 +7,8 @@ const execute = require('../src/execute');
 // Parse args
 const args = {_: []};
 for (let i = 2; i < process.argv.length; ++i) {
-  let curr = process.argv[i];
-  let next = process.argv[i+1];
+  const curr = process.argv[i];
+  const next = process.argv[i+1];
   args._.push(curr);
   if (curr.indexOf('-') === 0)
     args[curr.replace(/^-+/, '')] =
@@ -23,8 +23,8 @@ if (args.h || args.help)
 if (args.v || args.version)
   return process.stdout.write(`v${package.version}\n`);
 
-let fileName = args._[0];
-let input = args._[1];
+const fileName = args._[0];
+const input = args._[1];
 let moofuck;
 
 try {

@@ -1,7 +1,7 @@
 const transpile = require('./transpile');
 
 function parse(brainfuck, inLoop) {
-  let node = [];
+  const node = [];
 
   let command;
   while (command = brainfuck.shift()) {
@@ -22,12 +22,12 @@ function parse(brainfuck, inLoop) {
 }
 
 function run(baseNode, input) {
-  let array = [];
+  const array = [];
   let pointer = 0;
   input = Array.from(input);
 
   (function _run(node) {
-    for (let command of node) {
+    for (const command of node) {
       if (Array.isArray(command))
         while(array[pointer])
           _run(command);
@@ -40,7 +40,7 @@ function run(baseNode, input) {
           process.stdout.write(String.fromCharCode(array[pointer] || 0));
           break;
         case ',': {
-          let character = input.shift();
+          const character = input.shift();
           array[pointer] = character ? character.charCodeAt(0) : 0;
           break;
         }
@@ -50,7 +50,7 @@ function run(baseNode, input) {
 }
 
 module.exports = function execute(moofuck, input) {
-  let brainfuck = transpile.moofuckToBrainfuck(moofuck);
-  let brainfuckNode = parse(Array.from(brainfuck));
+  const brainfuck = transpile.moofuckToBrainfuck(moofuck);
+  const brainfuckNode = parse(Array.from(brainfuck));
   run(brainfuckNode, input || '');
 };
