@@ -31,7 +31,7 @@ Usage
   moofuck [filename]           Execute a Moofuck program
   moofuck [filename] [input]   ...with an input string
 
-Example
+Examples
 
   moofuck examples/helloWorld.moofuck
   moofuck examples/cat.moofuck "Hello World!"

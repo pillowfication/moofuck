@@ -1,35 +1,37 @@
-const transpile = require('./transpile');
+const moofuckToBrainfuck = require('./transpile').moofuckToBrainfuck;
+const isArray = Array.isArray;
 
-function parse(brainfuck, inLoop) {
+function parse(brainfuck, _inLoop) {
+  brainfuck = brainfuck.split('');
   const node = [];
 
   let command;
   while (command = brainfuck.shift()) {
-    if (command === '[')                 // Push next array of chunks
+    if (command === '[')                  // Push next array of chunks
       node.push(parse(brainfuck, true));
-    else if (command === ']' && !inLoop) // Opening `[` not found
+    else if (command === ']' && !_inLoop) // Opening `[` not found
       throw new Error('moo');
-    else if (command === ']' && inLoop)  // Closing `]` found
+    else if (command === ']' && _inLoop)  // Closing `]` found
       return node;
-    else                                 // Push command
+    else                                  // Push command
       node.push(command);
   }
 
-  if (inLoop)                            // Closing `]` not found
+  if (_inLoop)                            // Closing `]` not found
     throw new Error('moo');
 
   return node;
 }
 
 function run(baseNode, input) {
+  input = input ? input.split('') : [];
   const array = [];
   let pointer = 0;
-  input = Array.from(input);
 
   (function _run(node) {
     for (const command of node) {
-      if (Array.isArray(command))
-        while(array[pointer])
+      if (isArray(command))
+        while (array[pointer])
           _run(command);
       else switch (command) {
         case '>': ++pointer;                                break;
@@ -50,7 +52,7 @@ function run(baseNode, input) {
 }
 
 module.exports = function execute(moofuck, input) {
-  const brainfuck = transpile.moofuckToBrainfuck(moofuck);
-  const brainfuckNode = parse(Array.from(brainfuck));
-  run(brainfuckNode, input || '');
+  const brainfuck = moofuckToBrainfuck(moofuck);
+  const brainfuckNode = parse(brainfuck);
+  run(brainfuckNode, input);
 };
