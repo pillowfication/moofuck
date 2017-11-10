@@ -16,16 +16,17 @@
     "url": "https://github.com/pillowfication/moofuck/issues"
   },
   "main": "index.js",
+  "scripts": {
+    "test": "node_modules/standard/bin/cmd.js"
+  },
   "bin": {
     "moofuck": "bin/moofuck.js"
   },
   "preferGlobal": "true",
   "devDependencies": {
-    "eslint": "^3.9.1",
-    "eslint-config-pf": "1.0.6"
+    "standard": "^10.0.3"
   },
   "keywords": [
-    "pillow",
     "moo",
     "brainfuck"
   ],
