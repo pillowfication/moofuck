@@ -8,14 +8,14 @@ Each line must contain only `moo` and end in either `LF` or `CRLF`. Anything els
 
  Brainfuck |     Moofuck
 :---------:|:----------------:
-    `>`    |    `LF LF LF`
-    `<`    |   `LF LF CRLF`
-    `+`    |   `LF CRLF LF`
-    `-`    |  `LF CRLF CRLF`
-    `.`    |   `CRLF LF LF`
-    `,`    |  `CRLF LF CRLF`
-    `[`    |  `CRLF CRLF LF`
-    `]`    | `CRLF CRLF CRLF`
+ `>`       | `LF LF LF`
+ `<`       | `LF LF CRLF`
+ `+`       | `LF CRLF LF`
+ `-`       | `LF CRLF CRLF`
+ `.`       | `CRLF LF LF`
+ `,`       | `CRLF LF CRLF`
+ `[`       | `CRLF CRLF LF`
+ `]`       | `CRLF CRLF CRLF`
 
 ### Errors
 
