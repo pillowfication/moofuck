@@ -48,6 +48,6 @@ function moofuckToBrainfuck (moofuck) {
 }
 
 module.exports = {
-  brainfuckToMoofuck: brainfuckToMoofuck,
-  moofuckToBrainfuck: moofuckToBrainfuck
+  brainfuckToMoofuck,
+  moofuckToBrainfuck
 }
