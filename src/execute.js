@@ -23,7 +23,7 @@ function parse (brainfuck, _inLoop) {
   return node
 }
 
-function run (baseNode, input) {
+function run (baseNode, input, stdout) {
   input = input ? input.split('') : []
   const array = []
   let pointer = 0
@@ -49,7 +49,7 @@ function run (baseNode, input) {
             array[pointer] = (array[pointer] || 0) - 1
             break
           case '.':
-            process.stdout.write(String.fromCharCode(array[pointer] || 0))
+            stdout.write(String.fromCharCode(array[pointer] || 0))
             break
           case ',': {
             const character = input.shift()
@@ -63,10 +63,10 @@ function run (baseNode, input) {
   _run(baseNode)
 }
 
-function execute (moofuck, input) {
+function execute (moofuck, input, stdout = process.stdout) {
   const brainfuck = moofuckToBrainfuck(moofuck)
   const brainfuckNode = parse(brainfuck.split(''))
-  run(brainfuckNode, input)
+  run(brainfuckNode, input, stdout)
 }
 
 module.exports = execute

@@ -2,12 +2,16 @@
   "name": "moofuck",
   "version": "1.0.3",
   "description": "moo",
+  "main": "index.js",
+  "bin": {
+    "moofuck": "bin/moofuck.js"
+  },
+  "homepage": "http://pf-n.co/github/moofuck",
   "author": {
     "name": "Markus Tran",
     "email": "thebluepillow@gmail.com",
     "url": "http://pillowfication.com"
   },
-  "homepage": "https://github.com/pillowfication/moofuck",
   "repository": {
     "type": "git",
     "url": "git://github.com/pillowfication/moofuck.git"
@@ -15,14 +19,9 @@
   "bugs": {
     "url": "https://github.com/pillowfication/moofuck/issues"
   },
-  "main": "index.js",
   "scripts": {
     "test": "node_modules/standard/bin/cmd.js"
   },
-  "bin": {
-    "moofuck": "bin/moofuck.js"
-  },
-  "preferGlobal": "true",
   "devDependencies": {
     "standard": "^10.0.3"
   },
